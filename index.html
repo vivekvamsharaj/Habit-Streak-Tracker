@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>30-Day Habit Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="top-actions">
+        <button class="icon-btn" onclick="toggleDark()" id="themeBtn">🌙 Dark</button>
+    </div>
+
+    <header>
+        <div class="container">
+            <h1>30-Day Habit Tracker</h1>
+            <p>Track your daily habits and build streaks!</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="add-box">
+            <input type="text" id="habitInput" placeholder="Enter a new habit">
+
+            <select id="category">
+                <option>📚 Study</option>
+                <option>💻 Coding</option>
+                <option>🏃 Fitness</option>
+                <option>📖 Reading</option>
+                <option>🧘 Health</option>
+                <option>🎯 Other</option>
+            </select>
+
+            <button class="add-btn" onclick="addHabit()">+ Add Habit</button>
+        </section>
+
+        <section class="stats">
+            <div class="stat">
+                <div class="num" id="habitCount">0</div>
+                <small>Habits</small>
+            </div>
+
+            <div class="stat">
+                <div class="num" id="completedCount">0</div>
+                <small>Completed Days</small>
+            </div>
+
+            <div class="stat">
+                <div class="num" id="overallRate">0%</div>
+                <small>Overall Progress</small>
+            </div>
+
+            <div class="stat">
+                <div class="num" id="bestStreak">0</div>
+                <small>Best Streak 🔥</small>
+            </div>
+        </section>
+
+        <div id="habitList"></div>
+
+        <h2 class="section-title">📈 Weekly Activity</h2>
+
+        <section class="week-chart">
+            <div class="bars" id="chart"></div>
+        </section>
+
+        <h2 class="section-title">🏆 Achievements</h2>
+
+        <section class="week-chart">
+            <div class="badges" id="badges"></div>
+        </section>
+
+    </main>
+
+    <footer>
+        30-Day Habit Tracker • Your progress is saved automatically.
+    </footer>
+
+    <div class="modal" id="editModal">
+        <div class="modal-box">
+            <h3>✏️ Edit Habit</h3>
+
+            <input type="text" id="editName">
+
+            <select id="editCategory">
+                <option>📚 Study</option>
+                <option>💻 Coding</option>
+                <option>🏃 Fitness</option>
+                <option>📖 Reading</option>
+                <option>🧘 Health</option>
+                <option>🎯 Other</option>
+            </select>
+
+            <div class="modal-actions">
+                <button class="cancel" onclick="closeModal()">Cancel</button>
+                <button class="save" onclick="saveEdit()">Save Changes</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
